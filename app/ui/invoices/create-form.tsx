@@ -15,7 +15,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(createInvoice, initialState);
   return (
-    <form action={createInvoice}>
+    <form action={formAction}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
@@ -116,6 +116,4 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
       </div>
     </form>
   );
-
-  return <form action={formAction}>...</form>;
 }
